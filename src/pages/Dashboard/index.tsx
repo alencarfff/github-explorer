@@ -34,6 +34,7 @@ const Dashboard: React.FC = () => {
   
     if(!newRepo){
       setInputError("Digite o autor/nome do repositório")
+      return;
     }
 
     try {
@@ -65,7 +66,7 @@ const Dashboard: React.FC = () => {
 
       {inputError && <Error>{inputError}</Error>}
 
-      {repositories && 
+      {repositories && (
         <Repositories>
           { repositories.map(repo => (
             <Link key={repo.full_name} to={`/repositories/${repo.full_name}`}>
@@ -78,7 +79,7 @@ const Dashboard: React.FC = () => {
             </Link>
           ))}
         </Repositories>
-      }
+      )}
     </>
   );
 };
