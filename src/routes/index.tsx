@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 
-import Dashboard from '../pages/Dashboard';
-import Repository from '../pages/Repository';
+import DashboardPage from '../pages/DashboardPage';
+import RepositoryPage from '../pages/RepositoryPage';
 
 const Routes: React.FC = () =>
     <Switch>
-        <Route path="/" component={Dashboard} exact />
-        <Route path="/repositories/:repository+" component={Repository} />        
+        <Route path="/" component={DashboardPage} exact />
+        <Route path="/repositories/:repository+" component={RepositoryPage} />        
     </Switch>
 
 export default Routes;

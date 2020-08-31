@@ -1,5 +1,5 @@
 import React from 'react';
-import Repository from '../../pages/Repository';
+import Repository from '../../pages/RepositoryPage';
 import { render } from '@testing-library/react';
 
 jest.mock('react-router-dom', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from '../../pages/Dashboard';
+import Dashboard from '../../pages/DashboardPage';
 import { render } from '@testing-library/react';
 
 jest.mock('react-router-dom', () => {
@@ -14,4 +14,10 @@ describe('Dashboard page', () => {
     
         debug()
     })
-});
+
+    it('it should to load a repositories list', () => {
+        const {  } = render(<Dashboard />)
+        
+        
+    })
+}); 

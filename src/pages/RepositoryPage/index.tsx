@@ -2,35 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
 import { Header, RepositoryInfo, Issues } from './style';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
+import { RepositoryModel } from '../../models/Repository.model';
+import { Issue } from '../../models/Issue.model';
+
 import logo from '../../assets/img/logo.svg';
 import api from '../../services/api';
+
 interface RepositoryParams {
     repository: string
 }
 
-interface Repository {
-    full_name: string;
-    description: string;
-    stargazers_count: number;
-    forks_count: number;
-    open_issues_count: number;
-    owner: {
-        login: string;
-        avatar_url: string;
-    };
-}  
-
-interface Issue {
-    id: number;
-    title: string;
-    html_url: string;
-    user: {
-        login: string;
-    }
-}
-
-const Repository: React.FC = () => {
-    const [repository, setRepositories] = useState<Repository | null>(null)
+const RepositoryPage: React.FC = () => {
+    const [repository, setRepositories] = useState<RepositoryModel | null>(null)
     const [issues, setIssues] = useState<Issue[]>([])
 
     const { params } = useRouteMatch<RepositoryParams>();
@@ -97,4 +81,4 @@ const Repository: React.FC = () => {
     );
 }
 
-export default Repository;
+export default RepositoryPage;
